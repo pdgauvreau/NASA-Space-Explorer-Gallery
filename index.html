@@ -9,50 +9,51 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="nasa-logo.png" alt="NASA Logo" class="nasa-logo">
-            <h1>Astronomy Picture of the Day Gallery</h1>
+            <img src="img/NASA-Logo-Large.jpg" alt="NASA Logo" class="nasa-logo">
+            <h1>Astronomy Picture of the Day</h1>
+            <p class="subtitle">Explore the cosmos through NASA's lens</p>
         </div>
     </header>
 
     <main>
-        <section class="controls">
-            <h2 style="color: var(--nasa-blue); margin-bottom: 1.5rem; font-size: 1.3rem;">Select Date Range</h2>
+        <div class="controls">
             <div class="date-inputs">
                 <div class="input-group">
                     <label for="start-date">Start Date</label>
-                    <input type="date" id="start-date" max="" required>
+                    <input type="date" id="start-date" max="2025-10-28">
                 </div>
                 <div class="input-group">
                     <label for="end-date">End Date</label>
-                    <input type="date" id="end-date" max="" required>
+                    <input type="date" id="end-date" max="2025-10-28">
                 </div>
             </div>
             <button id="fetch-btn" class="fetch-button">Get Space Images</button>
-        </section>
+        </div>
 
-        <section class="gallery-section">
-            <div id="loading" class="loading hidden">
-                <div class="loading-spinner"></div>
-                <p>🔄 Loading space photos…</p>
-            </div>
-            <div id="gallery" class="gallery"></div>
-        </section>
+        <div id="loading" class="loading hidden">
+            <div class="loader"></div>
+            <p>🔄 Loading space photos…</p>
+        </div>
+
+        <div id="gallery" class="gallery"></div>
     </main>
 
     <!-- Modal -->
     <div id="modal" class="modal hidden">
-        <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div id="modal-image"></div>
-            <div class="modal-info">
-                <h2 id="modal-title"></h2>
-                <p id="modal-date" class="modal-date"></p>
-                <p id="modal-explanation" class="modal-explanation"></p>
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-media"></div>
+                <div class="modal-info">
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-date"></p>
+                    <p class="modal-explanation"></p>
+                    <p class="modal-copyright"></p>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
